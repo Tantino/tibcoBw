@@ -6,6 +6,14 @@
       <operation xmi:id="_TUDqMDaxEeaCfpcQ86KUvg" operationName="post" nickname="post-login" httpMethod="POST" responseStyle="element">
         <responseStatus xmi:id="_DorhADayEeaCfpcQ86KUvg" statusCode="200" reasonPhrase="OK" dataType="string"/>
         <responseStatus xmi:id="_DuwT0DayEeaCfpcQ86KUvg" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_L-ZywDeXEeanyYDSv97O5Q" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_ME9GsDeXEeanyYDSv97O5Q" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <responseStatus xmi:id="_MHF0sDeXEeanyYDSv97O5Q" statusCode="301" reasonPhrase="Moved Permanently" dataType="string"/>
+        <responseStatus xmi:id="_MInesDeXEeanyYDSv97O5Q" statusCode="303" reasonPhrase="See Other" dataType="string"/>
+        <responseStatus xmi:id="_MKmbsDeXEeanyYDSv97O5Q" statusCode="304" reasonPhrase="Not Modified" dataType="string"/>
+        <responseStatus xmi:id="_MqCJsDeXEeanyYDSv97O5Q" statusCode="307" reasonPhrase="Temporary Redirect" dataType="string"/>
+        <responseStatus xmi:id="_MvYjwDeXEeanyYDSv97O5Q" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_M2eqQDeXEeanyYDSv97O5Q" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
