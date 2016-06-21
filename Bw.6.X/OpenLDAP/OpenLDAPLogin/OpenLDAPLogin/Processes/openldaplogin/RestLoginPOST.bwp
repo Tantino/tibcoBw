@@ -193,6 +193,45 @@
                 <wsdl:part name="server-201-Created"
                     tibex:reasonPhrase="Created" tibex:statusCode="201" type="xsd:string"/>
             </wsdl:message>
+            <wsdl:message name="post202FaultMessage">
+                <wsdl:part name="server-202-Accepted"
+                    tibex:reasonPhrase="Accepted" tibex:statusCode="202" type="xsd:string"/>
+            </wsdl:message>
+            <wsdl:message name="post204FaultMessage">
+                <wsdl:part name="server-204-NoContent"
+                    tibex:reasonPhrase="No Content"
+                    tibex:statusCode="204" type="xsd:string"/>
+            </wsdl:message>
+            <wsdl:message name="post301FaultMessage">
+                <wsdl:part name="server-301-MovedPermanently"
+                    tibex:reasonPhrase="Moved Permanently"
+                    tibex:statusCode="301" type="xsd:string"/>
+            </wsdl:message>
+            <wsdl:message name="post303FaultMessage">
+                <wsdl:part name="server-303-SeeOther"
+                    tibex:reasonPhrase="See Other"
+                    tibex:statusCode="303" type="xsd:string"/>
+            </wsdl:message>
+            <wsdl:message name="post304FaultMessage">
+                <wsdl:part name="server-304-NotModified"
+                    tibex:reasonPhrase="Not Modified"
+                    tibex:statusCode="304" type="xsd:string"/>
+            </wsdl:message>
+            <wsdl:message name="post307FaultMessage">
+                <wsdl:part name="server-307-TemporaryRedirect"
+                    tibex:reasonPhrase="Temporary Redirect"
+                    tibex:statusCode="307" type="xsd:string"/>
+            </wsdl:message>
+            <wsdl:message name="post400FaultMessage">
+                <wsdl:part name="client-400-BadRequest"
+                    tibex:reasonPhrase="Bad Request"
+                    tibex:statusCode="400" type="xsd:string"/>
+            </wsdl:message>
+            <wsdl:message name="post401FaultMessage">
+                <wsdl:part name="client-401-Unauthorized"
+                    tibex:reasonPhrase="Unauthorized"
+                    tibex:statusCode="401" type="xsd:string"/>
+            </wsdl:message>
             <wsdl:portType name="login" tibex:bw.rest.apipath="/login"
                 tibex:bw.rest.basepath="Resource"
                 tibex:bw.rest.resource="Service Descriptors/openldaplogin.RestLoginPOST-Resource.json"
@@ -204,6 +243,14 @@
                     <wsdl:fault message="tns:post4XXFaultMessage" name="clientFault"/>
                     <wsdl:fault message="tns:post5XXFaultMessage" name="serverFault"/>
                     <wsdl:fault message="tns:post201FaultMessage" name="server-201-Fault"/>
+                    <wsdl:fault message="tns:post202FaultMessage" name="server-202-Fault"/>
+                    <wsdl:fault message="tns:post204FaultMessage" name="server-204-Fault"/>
+                    <wsdl:fault message="tns:post301FaultMessage" name="server-301-Fault"/>
+                    <wsdl:fault message="tns:post303FaultMessage" name="server-303-Fault"/>
+                    <wsdl:fault message="tns:post304FaultMessage" name="server-304-Fault"/>
+                    <wsdl:fault message="tns:post307FaultMessage" name="server-307-Fault"/>
+                    <wsdl:fault message="tns:post400FaultMessage" name="client-400-Fault"/>
+                    <wsdl:fault message="tns:post401FaultMessage" name="client-401-Fault"/>
                 </wsdl:operation>
             </wsdl:portType>
         </wsdl:definitions>
@@ -836,7 +883,7 @@
                             </bpws:reply>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/Authenticate+Input+417f6b7c-fb71-452b-9fdf-187aa3bfcd5c&quot; xmlns:tns1=&quot;http://www.example.com/namespaces/tns/1466404037919&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;AuthenticateEntry-input&quot; match=&quot;/&quot;>&lt;tns:LDAP_Authenticate_InputSchema>&lt;UserDN_Password>&lt;DN>&lt;xsl:value-of select=&quot;concat(&amp;quot;cn=&amp;quot;,$post/item/tns1:Resource/tns1:name,&amp;quot;,dc=example,dc=org&amp;quot;)&quot;/>&lt;/DN>&lt;xsl:if test=&quot;$post/item/tns1:Resource/tns1:flag&quot;>&lt;Password>&lt;xsl:value-of select=&quot;$post/item/tns1:Resource/tns1:flag&quot;/>&lt;/Password>&lt;/xsl:if>&lt;/UserDN_Password>&lt;/tns:LDAP_Authenticate_InputSchema>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/Authenticate+Input+417f6b7c-fb71-452b-9fdf-187aa3bfcd5c&quot; xmlns:tns1=&quot;http://www.example.com/namespaces/tns/1466404037919&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;AuthenticateEntry-input&quot; match=&quot;/&quot;>&lt;tns:LDAP_Authenticate_InputSchema>&lt;UserDN_Password>&lt;DN>&lt;xsl:value-of select=&quot;concat(&amp;quot;cn=&amp;quot;,$post/item/tns1:Resource/tns1:name,&amp;quot;,dc=example,dc=org&amp;quot;)&quot;/>&lt;/DN>&lt;xsl:if test=&quot;$post/item/tns1:Resource/tns1:pass&quot;>&lt;Password>&lt;xsl:value-of select=&quot;$post/item/tns1:Resource/tns1:pass&quot;/>&lt;/Password>&lt;/xsl:if>&lt;/UserDN_Password>&lt;/tns:LDAP_Authenticate_InputSchema>&lt;/xsl:template>&lt;/xsl:stylesheet>"
                                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="AuthenticateEntry-input"
                                     name="AuthenticateEntry"
@@ -850,7 +897,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/Authenticate+Input+417f6b7c-fb71-452b-9fdf-187aa3bfcd5c&quot; xmlns:tns1=&quot;http://www.example.com/namespaces/tns/1466404037919&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.item&quot;/>&#xa;    &lt;xsl:template name=&quot;AuthenticateEntry-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns:LDAP_Authenticate_InputSchema>&#xa;            &lt;UserDN_Password>&#xa;                &lt;DN>&#xa;                    &lt;xsl:value-of select=&quot;concat(&amp;quot;cn=&amp;quot;,$post.item/tns1:name,&amp;quot;,dc=example,dc=org&amp;quot;)&quot;/>&#xa;                &lt;/DN>&#xa;                &lt;xsl:if test=&quot;$post.item/tns1:flag&quot;>&#xa;                    &lt;Password>&#xa;                        &lt;xsl:value-of select=&quot;$post.item/tns1:flag&quot;/>&#xa;                    &lt;/Password>&#xa;                &lt;/xsl:if>&#xa;            &lt;/UserDN_Password>&#xa;        &lt;/tns:LDAP_Authenticate_InputSchema>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/Authenticate+Input+417f6b7c-fb71-452b-9fdf-187aa3bfcd5c&quot; xmlns:tns1=&quot;http://www.example.com/namespaces/tns/1466404037919&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.item&quot;/>&#xa;    &lt;xsl:template name=&quot;AuthenticateEntry-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns:LDAP_Authenticate_InputSchema>&#xa;            &lt;UserDN_Password>&#xa;                &lt;DN>&#xa;                    &lt;xsl:value-of select=&quot;concat(&amp;quot;cn=&amp;quot;,$post.item/tns1:name,&amp;quot;,dc=example,dc=org&amp;quot;)&quot;/>&#xa;                &lt;/DN>&#xa;                &lt;xsl:if test=&quot;$post.item/tns1:pass&quot;>&#xa;                    &lt;Password>&#xa;                        &lt;xsl:value-of select=&quot;$post.item/tns1:pass&quot;/>&#xa;                    &lt;/Password>&#xa;                &lt;/xsl:if>&#xa;            &lt;/UserDN_Password>&#xa;        &lt;/tns:LDAP_Authenticate_InputSchema>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
