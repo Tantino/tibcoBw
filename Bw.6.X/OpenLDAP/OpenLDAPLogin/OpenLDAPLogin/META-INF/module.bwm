@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_7b9MoDawEeaCfpcQ86KUvg" targetNamespace="http://tns.tibco.com/bw/composite/OpenLDAPLogin" name="OpenLDAPLogin" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_TTBIYDaxEeaCfpcQ86KUvg" name="login" promote="ComponentResource/login">
+    <sca:interface.wsdl xmi:id="_TTPx4DaxEeaCfpcQ86KUvg" interface="http://xmlns.example.com/20160620083621PLT#wsdl.interface(login)" scaext:wsdlLocation="../Processes/openldaplogin2/Resource.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_TTlwIDaxEeaCfpcQ86KUvg" name="RestService" path="/login" docBasePath="http://localhost:7777/OpenLDAPLogin" docResourcePath="Resource" basePath="/" connector="openldaplogin2.Resource" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/openldaplogin2.Resource-Resource.json">
+      <operation xmi:id="_TUDqMDaxEeaCfpcQ86KUvg" operationName="post" nickname="post-login" httpMethod="POST" responseStyle="element">
+        <responseStatus xmi:id="_DorhADayEeaCfpcQ86KUvg" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_DuwT0DayEeaCfpcQ86KUvg" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_TVB6kDaxEeaCfpcQ86KUvg"/>
+      <clientFormat>json</clientFormat>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_TUDqMTaxEeaCfpcQ86KUvg" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_7zOdIDawEeaCfpcQ86KUvg" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_7z_SIDawEeaCfpcQ86KUvg" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_70DjkDawEeaCfpcQ86KUvg" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_70KRQDawEeaCfpcQ86KUvg" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_70QX4DawEeaCfpcQ86KUvg" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_70UpUDawEeaCfpcQ86KUvg" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_70YTsDawEeaCfpcQ86KUvg" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_70dzQDawEeaCfpcQ86KUvg" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_70iEsDawEeaCfpcQ86KUvg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_TSkccDaxEeaCfpcQ86KUvg" name="ComponentResource" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_TSkccTaxEeaCfpcQ86KUvg" processName="openldaplogin.RestLoginPOST"/>
+    <sca:service xmi:id="_TSxQwDaxEeaCfpcQ86KUvg" name="login">
+      <sca:interface.wsdl xmi:id="_TS5MkDaxEeaCfpcQ86KUvg" interface="http://xmlns.example.com/20160620083621PLT#wsdl.interface(login)" scaext:wsdlLocation="../Processes/openldaplogin2/Resource.bwp"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

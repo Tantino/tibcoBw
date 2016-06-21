@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/OpenLDAPLogin2/Service Descriptors/openldaplogin2.Resource-Resource.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.com/namespaces/tns/1466404037919"
+    },
+    {
+        "jsonSchemaLocation": "/OpenLDAPLogin2/Service Descriptors/openldaplogin2.Resource-Resource.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://tns.tibco.com/bw/REST"
+    }
+]}
