@@ -4,18 +4,8 @@
         "items": [],
         "url": "http://192.168.59.103:8888"
     }],
-    "resources": [
-        {
-            "location": "Service Descriptors/openldaplogin2.Resource-Resource.json",
-            "type": "generated"
-        },
-        {
-            "location": "Service Descriptors/openldaplogin.Resource-Resource.json",
-            "type": "generated"
-        },
-        {
-            "location": "Service Descriptors/openldaplogin.RestLoginPOST-Resource.json",
-            "type": "generated"
-        }
-    ]
+    "resources": [{
+        "location": "Service Descriptors/openldaplogin.RestLoginPOST-Resource.json",
+        "type": "generated"
+    }]
 }
